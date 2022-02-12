@@ -1,0 +1,8 @@
+all: fibonnaci
+
+mybyte: fibonnaci.S
+	nasm -f elf64 fibonnaci.S
+	gcc -no-pie fibonnaci.o fibonnaci.c -o fibonnaci
+
+clean:
+	$(RM) *.o fibonnaci
