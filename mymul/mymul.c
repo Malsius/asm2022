@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 typedef struct {
-        unsigned long long high;
-            unsigned long long low;
+    unsigned long long high;
+    unsigned long long low;
 } resmul;
 
 void mymul(unsigned long long, unsigned long long, resmul *res);
