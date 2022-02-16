@@ -8,12 +8,10 @@ mydiv:
     push rdx
     mov rdx, 0
     mov rax, rdi
-    mov rcx, rsi
-    div rcx
-    mov rcx, rdx
-    pop rdx
-    mov qword [rdx], rax
-    mov qword [rdx+8], rcx
+    div rsi
+    pop rcx
+    mov qword [rcx], rax
+    mov qword [rcx+8], rdx
     mov rax, 1
     ret
 
