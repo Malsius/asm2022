@@ -7,7 +7,7 @@ myitoa:
     mov rbx, 1
     mov rcx, 0
     mov rsi, 10
-    cmp byte [rdi+rcx], 45
+    cmp byte [rdi], 45
     jne loop_start
     mov rbx, -1
     inc rcx
