@@ -9,7 +9,6 @@ fibonnaci:
     mov rax, 0
     mov rbx, 1
     mov rdx, rdi
-    jmp loop_start
 
 loop_start:
     cmp rdx, 0
