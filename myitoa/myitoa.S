@@ -11,7 +11,6 @@ myitoa:
     jne loop_start
     mov rbx, -1
     inc rcx
-    jmp loop_start
 
 loop_start:
     cmp byte [rdi+rcx], 0
