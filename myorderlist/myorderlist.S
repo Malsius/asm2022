@@ -2,36 +2,33 @@ global orderlist
 
 section .text
 
-; RDI = list
-; RSI = len(list)
-
 orderlist:
     mov r10, 10
     mov r14, rdi
     mov r15, rsi
-    mov r11, 0 ; R11 = i
+    mov r11, 0
 
 first_loop_start:
     cmp r11, rsi
     je write_start
     mov r12, rsi
     sub r12, r11
-    sub r12, 1 ; R12 = (n-i-1)
-    mov r13, 0 ; R13 = j
+    sub r12, 1
+    mov r13, 0
 
 second_loop_start:
     cmp r13, r12
     je second_loop_end
-    mov r8, [rdi + 8 * r13] ; R8 = list[j]
-    mov r9, [rdi + 8 * (r13 + 1)] ; R9 = list[j+1]
+    mov r8, [rdi + 8 * r13]
+    mov r9, [rdi + 8 * (r13 + 1)]
     cmp r8, r9
     jg swap
     inc r13
     jmp second_loop_start
 
 swap:
-    mov [rdi + 8 * r13], r9 ; list[j] = list[j+1]
-    mov [rdi + 8 * (r13 + 1)], r8 ; list[j+1] = list[j]
+    mov [rdi + 8 * r13], r9
+    mov [rdi + 8 * (r13 + 1)], r8
     inc r13
     jmp second_loop_start
 
